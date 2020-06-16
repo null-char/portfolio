@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+require("typeface-montserrat")
+require("typeface-fira-sans")
 
-// You can delete this file if you're not using it
+// right after React.render is called
+exports.onInitialClientRender = () => {
+  const {
+    default: Scrollbar
+  } = require("smooth-scrollbar")
+
+  // look for something with the id of smooth-scroll
+  //! won't work unless the scrollable area is specified explicitly for each page
+  Scrollbar.init(document.querySelector("#smooth-scroll"))
+}

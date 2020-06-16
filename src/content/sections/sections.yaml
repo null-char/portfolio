@@ -1,0 +1,6 @@
+- heading: "What I can do for you"
+  content: "I've always been interested in Software Development. I always try to keep up with best practices when developing software. I can do Web Development & Design for you. I'll make something that best represents your brand! I can also do complicated Web Apps as well. I unfortunately don't offer Mobile App Development services yet."
+  img: ../../assets/business_deal.svg
+- heading: "My tools"
+  content: "I primarily use React for the front-end and I've previously dabbled in VueJS as well. As for the backend, I use NodeJS for the server and Postgres / MongoDB for databases. Of course, if you have differing requirements, I'm open to look into it and get back to you. I'm happy to adapt."
+  img: ../../assets/mind_map.svg

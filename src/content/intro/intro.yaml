@@ -1,0 +1,10 @@
+# The structure might look a bit confusing but in essence, the subHeading (i.e the less important)
+# heading will be shown first in white text followed by the main heading (most important for SEO),
+# will be shown in emphasized blue color
+heading:
+  main: "I'm a freelance web developer"
+  sub: "Hey, there!"
+content: "I'm primarily a full stack web developer and I offer web development services. I'm also open to doing miscellaneous stuff like bots or what have you. I absolutely love the challenge of building things and that is exactly what I will do for you."
+primaryBtnText: "Contact Me"
+secondaryBtnText: "Projects"
+img: ../../assets/developer_activity.svg
