@@ -53,7 +53,6 @@ const Sections: React.FC = () => {
       <InnerWrapper>
         {sections.map(({ node: section }, i) => {
           const { ref, controls, variants } = useScrollAnimation("slide")
-          const idx = i + 1
 
           return (
             <SectionWrapper
