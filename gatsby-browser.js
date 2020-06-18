@@ -2,7 +2,7 @@ require("typeface-montserrat")
 require("typeface-fira-sans")
 
 // right after React.render is called
-exports.onInitialClientRender = () => {
+exports.onRouteUpdate = () => {
   const {
     default: Scrollbar
   } = require("smooth-scrollbar")
