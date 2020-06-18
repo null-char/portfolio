@@ -1,5 +1,6 @@
 import React from "react"
 import { PageProps } from "gatsby"
+import SEO from "@/components/SEO"
 import Layout from "@/components/layout"
 import Header from "@/components/Header"
 import Intro from "@/components/Intro"
@@ -16,6 +17,7 @@ const GridContainer = styled.main`
 
 const Home: React.FC<PageProps> = () => (
   <Layout>
+    <SEO title="Null Char | Freelance Web Developer" />
     <Header />
     <GridContainer id="smooth-scroll">
       <div>
