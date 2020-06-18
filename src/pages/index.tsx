@@ -18,6 +18,7 @@ const GridContainer = styled.main`
 const Home: React.FC<PageProps> = () => (
   <Layout>
     <SEO title="Null Char | Freelance Web Developer" />
+
     <Header />
     <GridContainer id="smooth-scroll">
       <div>

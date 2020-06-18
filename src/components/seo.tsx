@@ -46,6 +46,14 @@ const SEO: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
+      link={[
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.ico",
+          sizes: "16x16",
+        },
+      ]}
       meta={[
         {
           name: `description`,
