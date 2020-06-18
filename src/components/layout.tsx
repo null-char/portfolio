@@ -12,11 +12,6 @@ const GlobalStyles = createGlobalStyle`
     -webkit-tap-highlight-color: transparent;
   }
 
-  ::selection {
-    background-color: ${theme.colors.primary};
-    color: ${theme.colors.background};
-  }
-
   h1, h2, h3, h4, h5, h6 {
     font-family: Fira Sans, sans-serif;
     font-weight: 700;
@@ -28,6 +23,18 @@ const GlobalStyles = createGlobalStyle`
 
     @media ${device.laptop} {
       font-size: 12px;
+    }
+
+    @media ${device.laptopL} {
+      font-size: 14px;
+    }
+
+    @media ${device.desktop} {
+      font-size: 16px;
+    }
+
+    @media ${device.desktopL} {
+      font-size: 20px;
     }
   }
 
