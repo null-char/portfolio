@@ -50,7 +50,7 @@ const SEO: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
         {
           rel: "icon",
           type: "image/png",
-          href: "/favicon.ico",
+          href: "../favicon.ico",
           sizes: "16x16",
         },
       ]}
