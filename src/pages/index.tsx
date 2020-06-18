@@ -1,6 +1,6 @@
 import React from "react"
 import { PageProps } from "gatsby"
-import SEO from "@/components/SEO"
+import SEO from "@/components/seo"
 import Layout from "@/components/layout"
 import Header from "@/components/Header"
 import Intro from "@/components/Intro"
