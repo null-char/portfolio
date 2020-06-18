@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Null Char | Freelance Web Developer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Need a digital presence? Or maybe a complex web app? I'm a fullstack developer and I love what I do. If you have something you wish to be made, feel free to shoot me a message!`,
+    author: `@null-char`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -51,12 +51,11 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          "@": "src"
+          "@": "src",
         },
-        extensions: ["ts", "js", "tsx", "yaml"]
-      }
+        extensions: ["ts", "js", "tsx", "yaml"],
+      },
     },
-    `gatsby-plugin-optimize-svgs`,
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-yaml`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
