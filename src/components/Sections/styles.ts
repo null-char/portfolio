@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
   }
 
-  @media ${device.laptop} {
+  @media ${device.tabletL} {
     padding: 20rem 5rem;
   }
 `
