@@ -5,7 +5,9 @@ declare module "styled-components" {
     colors: {
       primary: string
       background: string
+      rgbBackground: string
       text: string
+      cardBackground: string
     }
   }
 }
