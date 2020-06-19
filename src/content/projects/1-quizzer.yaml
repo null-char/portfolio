@@ -1,0 +1,6 @@
+name: "Quizzer"
+description: "This is a desktop app made with Electron. It offers tooling to create completely custom made quizzes. The editor allows you to add custom made questions or fetch questions from an API. You can sort them, put timers on them, categorize them by difficulty, etc."
+img: ../../assets/quizzer.png
+siteAvailable: false
+siteURL: ""
+sourceURL: "https://github.com/null-char/quizzer"
