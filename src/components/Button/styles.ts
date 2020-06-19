@@ -21,8 +21,7 @@ export const Ink = styled.span`
   background: rgba(0, 0, 0, 0.1);
 `
 
-// default is secondary state
-export const Wrapper = styled.button<VariantProps>`
+const styles = css<VariantProps>`
   width: 100%;
   position: relative;
   outline: none;
@@ -79,4 +78,18 @@ export const Wrapper = styled.button<VariantProps>`
         border: 0.2rem dashed ${props => props.theme.colors.text};
       } */
     `}
+`
+
+// default is secondary state
+export const Wrapper = styled.button`
+  ${styles}
+`
+
+// anchor tag version
+export const LinkWrapper = styled.a`
+  ${styles}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 `
