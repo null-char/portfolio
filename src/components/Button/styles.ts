@@ -30,7 +30,7 @@ export const Wrapper = styled.button<VariantProps>`
   font-family: inherit;
   font-size: 1.6rem;
   cursor: pointer;
-  padding: 0.8rem 0rem;
+  padding: 1rem 0rem;
   color: ${props => props.theme.colors.background};
   background-color: ${props => props.theme.colors.text};
   box-shadow: 0rem 0.3rem 0.6rem ${props => props.theme.colors.text}26;
