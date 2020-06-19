@@ -14,6 +14,10 @@ export const Wrapper = styled(motion.section)`
     grid-template-columns: 80%;
     justify-content: center;
     justify-items: center;
+    height: 83vh;
+  }
+
+  @media ${device.laptop} {
     height: 70vh;
   }
 `
