@@ -1,7 +1,8 @@
 import styled, { keyframes } from "styled-components"
 import { motion } from "framer-motion"
 
-const upAndDownAnim = keyframes`
+// exported for use in animating Gatsby Img elements
+export const upAndDownAnim = keyframes`
   0% {
     transform: translateY(-0.1rem)
   }
