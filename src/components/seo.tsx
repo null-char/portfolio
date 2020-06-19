@@ -1,4 +1,5 @@
 import React from "react"
+import logoImg from "@/assets/logo-1200x1200.png"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -101,7 +102,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-  img: `../logo-1200x1200.png`,
+  img: logoImg,
 }
 
 export default SEO
