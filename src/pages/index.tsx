@@ -6,13 +6,16 @@ import Header from "@/components/Header"
 import Intro from "@/components/Intro"
 import Sections from "@/components/Sections"
 import Cards from "@/components/Cards"
+import Projects from "@/components/Projects"
 import styled from "styled-components"
 
 const GridContainer = styled.main`
   display: grid;
   grid-template-rows: auto;
-  row-gap: 7rem;
+  row-gap: 15rem;
   padding-top: 6.4rem;
+
+  padding-bottom: 20rem; /* temporary padding */
 `
 
 const Home: React.FC<PageProps> = () => (
@@ -20,14 +23,17 @@ const Home: React.FC<PageProps> = () => (
     <SEO title="Null Char | Freelance Web Developer" />
 
     <Header />
-    <GridContainer id="smooth-scroll">
-      <div>
-        <Intro />
-        <Sections />
-      </div>
+    <div id="smooth-scroll">
+      <GridContainer>
+        <div>
+          <Intro />
+          <Sections />
+        </div>
 
-      <Cards />
-    </GridContainer>
+        <Cards />
+        <Projects />
+      </GridContainer>
+    </div>
   </Layout>
 )
 
