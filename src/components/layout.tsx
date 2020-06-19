@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
   html, body {
     font-size: 10px;
     font-family: Montserrat, sans-serif;
+    overflow-x: hidden;
 
     @media ${device.laptop} {
       font-size: 12px;
@@ -42,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     background-color: ${theme.colors.background};
     color: ${theme.colors.text};
-    overflow-x: hidden;
+    width: 100%;
   }
 
   #smooth-scroll {
