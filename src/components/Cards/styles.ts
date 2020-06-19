@@ -8,7 +8,6 @@ export const Wrapper = styled.section`
   grid-template-rows: repeat(2, min-content);
   row-gap: 4rem;
   padding: 0rem 3rem;
-  margin-top: 5rem;
 
   @media ${device.tabletL} {
     padding: 0rem 5rem;
@@ -21,8 +20,6 @@ export const Wrapper = styled.section`
   @media ${device.laptopL} {
     padding: 0rem 10rem;
   }
-
-  padding-bottom: 20rem !important; /* temporary padding */
 `
 
 export const CardsGrid = styled(motion.div)`
