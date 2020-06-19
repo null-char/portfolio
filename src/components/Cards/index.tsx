@@ -21,6 +21,7 @@ type QueryData = {
         svg: {
           publicURL: string
         }
+        id: string
       }
     }[]
   }
@@ -37,6 +38,7 @@ const Cards: React.FC = () => {
             svg {
               publicURL
             }
+            id
           }
         }
       }
@@ -78,7 +80,7 @@ const Cards: React.FC = () => {
 
       <CardsGrid ref={cRef} animate={cControls} variants={cVariants}>
         {cards.map(({ node: card }) => (
-          <Card animate={cControls} variants={cVariants}>
+          <Card animate={cControls} variants={cVariants} key={card.id}>
             <CardMain>
               <SVGImg src={card.svg.publicURL} alt="card svg" />
               <ColoredText>{card.feat}</ColoredText>
