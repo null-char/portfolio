@@ -10,7 +10,7 @@ import {
   Transition,
 } from "framer-motion"
 
-type AnimationTypes = "fade" | "slide"
+type AnimationTypes = "fade" | "slide" | "slideRight"
 type Options = {
   animation?: Orchestration & Partial<Spring | Tween>
   intersection?: IntersectionOptions
@@ -19,12 +19,12 @@ type Options = {
 type VariantStates = "visible" | "hidden"
 
 /**
- * A hook which handles animation logic for scroll animations. Uses framer motion's `useAnimation` hook internally. Uses a "spring" animation.
+ * A hook which handles animation logic for scroll animations. Uses framer motion's `useAnimation` hook internally. Uses a "spring" animation for non-fade types.
  *
  * @param type Type of animation to play. Set to "fade" by default.
  * @param options Provide animation transition options.
- * @param intersectionOption Provide options for intersection observer
- * @param inViewCallback A callback that will be called whenever the observed node goes out of view or comes into view
+ * @param intersectionOptions Provide options for intersection observer
+ * @param inViewCallback A callback that will be invoked whenever the observed node goes out of view or comes into view
  *
  * @returns An object containing `ref`, `controls` and `variants`
  * Provide ref to the motion component to be scroll animated. Provide controls and variants to the parent and optionally its children (also must be motion components) if you wish to do stagger animations. The `staggerChildren` transiton property is set to 0.1 seconds by default.
@@ -55,7 +55,7 @@ export const useScrollAnimation = (
       stiffness: 30,
       mass: 0.3,
       staggerChildren: 0.1,
-      ...options,
+      ...animationOptions,
     })
   }
 
@@ -78,10 +78,20 @@ export const useScrollAnimation = (
         translateX: "-100%",
       },
     },
+    slideRight: {
+      visible: {
+        opacity: 1,
+        translateX: "0%",
+      },
+      hidden: {
+        opacity: 0,
+        translateX: "100%",
+      },
+    },
   }
 
   useEffect(() => {
-    // use the provided callback if it is provided else default to basic controls
+    // use the provided callback if it is specified else default to basic controls
     if (options?.inViewCallback) {
       options.inViewCallback()
     } else {
@@ -94,7 +104,7 @@ export const useScrollAnimation = (
   }, [controls, inView, options])
 
   const variants = allVariants[animation]
-  // restrict controls
+  // restrict controls type definition
   controls as AnimationControls & {
     start: (
       definition: VariantStates,
