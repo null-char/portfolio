@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import logoImg from "@/assets/logo-1200x1200.png"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -11,6 +11,7 @@ type SEOProps = {
     React.MetaHTMLAttributes<HTMLMetaElement>,
     HTMLMetaElement
   >[]
+  img?: string
 }
 
 type QueryData = {
@@ -23,7 +24,7 @@ type QueryData = {
   }
 }
 
-const SEO: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
+const SEO: React.FC<SEOProps> = ({ description, lang, meta, title, img }) => {
   const { site }: QueryData = useStaticQuery(
     graphql`
       query {
@@ -50,8 +51,8 @@ const SEO: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
         {
           rel: "icon",
           type: "image/png",
-          href: "../favicon.ico",
-          sizes: "16x16",
+          href: "../favicon-32x32.png",
+          sizes: "32x32",
         },
       ]}
       meta={[
@@ -62,6 +63,10 @@ const SEO: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
         {
           property: `og:title`,
           content: title,
+        },
+        {
+          property: `og:image`,
+          content: img,
         },
         {
           property: `og:description`,
@@ -97,6 +102,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  img: logoImg,
 }
 
 export default SEO
