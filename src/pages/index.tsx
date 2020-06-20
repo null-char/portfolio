@@ -23,7 +23,7 @@ const Home: React.FC<PageProps> = () => (
     <SEO title="Null Char | Freelance Web Developer" />
 
     <Header />
-    <div id={window.screen.width > 1024 && "smooth-scroll"}>
+    <div id="smooth-scroll">
       <GridContainer>
         <div>
           <Intro />
