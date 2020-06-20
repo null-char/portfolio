@@ -47,9 +47,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   #smooth-scroll {
-    width: 100vw;
-    height: 100vh;
-    overflow: auto;
+    @media ${device.laptop} {
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+    }
   }
 `
 
