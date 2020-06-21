@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { motion, Variants, useAnimation } from "framer-motion"
 import logoSvg from "@/assets/logo.svg"
+import scrollTo from "@/utils/scrollTo"
 import theme from "@/themes/theme"
 import Button from "@/components/Button"
 import {
@@ -46,6 +47,23 @@ const Nav: React.FC = () => {
   // mobile exclusive animations
   const navControls = useAnimation()
   const dropDownControls = useAnimation()
+  const navScrollTo = (elementId: string) => {
+    // start scroll
+    scrollTo(elementId)
+
+    // close menu if opened (which it should be if on mobile)
+    if (isMenuOpen) onIconClick()
+  }
+
+  const navItemsJSX = (
+    <>
+      <NavItem>Social</NavItem>
+      <NavItem onClick={() => navScrollTo("projects")}>Projects</NavItem>
+      <ContactBtn>
+        <Button primary>Contact</Button>
+      </ContactBtn>
+    </>
+  )
 
   const onIconClick = async () => {
     if (!isMenuOpen) {
@@ -73,14 +91,7 @@ const Nav: React.FC = () => {
         <Name>Null Char</Name>
       </Logo>
 
-      <DesktopNavItemsList>
-        <NavItem>Social</NavItem>
-        <NavItem>Projects</NavItem>
-        {/* <NavItem>Contact</NavItem> */}
-        <ContactBtn>
-          <Button primary>Contact</Button>
-        </ContactBtn>
-      </DesktopNavItemsList>
+      <DesktopNavItemsList>{navItemsJSX}</DesktopNavItemsList>
 
       <MobileNavItemsList
         initial={{ translateY: "-150%" }}
@@ -88,11 +99,7 @@ const Nav: React.FC = () => {
         // animate={isMenuOpen ? { translateY: "0%" } : { translateY: "-150%" }}
         animate={dropDownControls}
       >
-        <NavItem>Social</NavItem>
-        <NavItem>Projects</NavItem>
-        <ContactBtn>
-          <Button primary>Contact</Button>
-        </ContactBtn>
+        {navItemsJSX}
       </MobileNavItemsList>
 
       <MobileIcon
