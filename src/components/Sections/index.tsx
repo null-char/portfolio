@@ -68,6 +68,10 @@ const Sections: React.FC = () => {
 
               <SvgImage
                 src={section.img.publicURL}
+                alt={section.img.publicURL
+                  .split("/")[3]
+                  .split(".")[0]
+                  .replace("_", " ")}
                 animate={controls}
                 variants={variants}
               />
