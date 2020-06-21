@@ -35,7 +35,8 @@ const styles = css<VariantProps>`
   box-shadow: 0rem 0.3rem 0.6rem ${props => props.theme.colors.text}26;
   border-radius: 0.5rem;
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  transition-property: transform, box-shadow;
 
   :hover {
     transform: translateY(-0.1rem);
@@ -52,7 +53,7 @@ const styles = css<VariantProps>`
   }
 
   ${Ink} {
-    background: ${props => props.primary && "rgba(255, 255, 255, 0.5)"}
+    background-color: ${props => props.primary && "rgba(255, 255, 255, 0.5)"}
   }
 
   /* :focus {
