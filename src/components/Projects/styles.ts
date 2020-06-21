@@ -88,6 +88,18 @@ export const ProjectHeading = styled(motion.h3)`
 export const ProjectDesc = styled(Paragraph)`
   position: relative;
   z-index: -1;
+
+  a {
+    position: relative;
+    text-decoration: none;
+    color: ${props => props.theme.colors.primary};
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+
+    :hover {
+      opacity: 0.9;
+    }
+  }
 `
 
 export const BtnsContainer = styled(motion.div)`
