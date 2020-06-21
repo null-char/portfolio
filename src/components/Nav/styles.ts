@@ -57,7 +57,8 @@ export const NavItem = styled.li`
   display: block;
   font-size: 2rem;
   cursor: pointer;
-  transition: all 0.2s ease-out;
+  transition: 0.2s ease-out;
+  transition-property: transform, color;
 
   :hover {
     transform: translateX(-0.6rem) scale(1.1);
@@ -82,7 +83,8 @@ export const ContactBtn = styled.div`
     font-size: 2rem;
     cursor: pointer;
     text-transform: uppercase;
-    transition: all 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    transition-property: transform, color, background-color;
     display: flex;
     justify-content: center;
     align-items: center;
