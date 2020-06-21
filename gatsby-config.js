@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,46 +46,47 @@ module.exports = {
         background_color: `#00080A`,
         theme_color: `#0EDEFF`,
         display: `standalone`,
-        "icons": [{
-            "src": "icons/icon-72x72.png",
-            "sizes": "72x72",
-            "type": "image/png"
+        icons: [
+          {
+            src: "icons/icon-72x72.png",
+            sizes: "72x72",
+            type: "image/png",
           },
           {
-            "src": "icons/icon-96x96.png",
-            "sizes": "96x96",
-            "type": "image/png"
+            src: "icons/icon-96x96.png",
+            sizes: "96x96",
+            type: "image/png",
           },
           {
-            "src": "icons/icon-128x128.png",
-            "sizes": "128x128",
-            "type": "image/png"
+            src: "icons/icon-128x128.png",
+            sizes: "128x128",
+            type: "image/png",
           },
           {
-            "src": "icons/icon-144x144.png",
-            "sizes": "144x144",
-            "type": "image/png"
+            src: "icons/icon-144x144.png",
+            sizes: "144x144",
+            type: "image/png",
           },
           {
-            "src": "icons/icon-152x152.png",
-            "sizes": "152x152",
-            "type": "image/png"
+            src: "icons/icon-152x152.png",
+            sizes: "152x152",
+            type: "image/png",
           },
           {
-            "src": "icons/icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
+            src: "icons/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
           },
           {
-            "src": "icons/icon-384x384.png",
-            "sizes": "384x384",
-            "type": "image/png"
+            src: "icons/icon-384x384.png",
+            sizes: "384x384",
+            type: "image/png",
           },
           {
-            "src": "icons/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-          }
+            src: "icons/icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
         ],
       },
     },
@@ -97,8 +99,6 @@ module.exports = {
         extensions: ["ts", "js", "tsx", "yaml"],
       },
     },
-    `gatsby-plugin-catch-links`,
-    `gatsby-transformer-yaml`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
