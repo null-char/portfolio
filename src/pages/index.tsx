@@ -8,6 +8,7 @@ import Sections from "@/components/Sections"
 import Cards from "@/components/Cards"
 import Projects from "@/components/Projects"
 import styled from "styled-components"
+import { SMOOTH_SCROLL_ID } from "@/utils/constants"
 
 const GridContainer = styled.main`
   display: grid;
@@ -23,7 +24,7 @@ const Home: React.FC<PageProps> = () => (
     <SEO title="Null Char | Freelance Web Developer" />
 
     <Header />
-    <div id="smooth-scroll">
+    <div id={SMOOTH_SCROLL_ID}>
       <GridContainer>
         <div>
           <Intro />
