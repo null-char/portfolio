@@ -1,8 +1,9 @@
 import React from "react"
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
+import { ThemeProvider, createGlobalStyle } from "styled-components"
 import PropTypes from "prop-types"
 import theme from "@/themes/theme"
 import device from "@/utils/media"
+import { SMOOTH_SCROLL_ID } from "@/utils/constants"
 
 const GlobalStyles = createGlobalStyle`
   *, *::after, *::before {
@@ -45,12 +46,23 @@ const GlobalStyles = createGlobalStyle`
     color: ${theme.colors.text};
     width: 100%;
   }
+  
+   #${SMOOTH_SCROLL_ID} {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 
-  #smooth-scroll {
-    @media ${device.laptop} {
-      width: 100vw;
-      height: 100vh;
-      overflow: auto;
+  .scrollbar-track-y {
+    width: 3px !important;
+
+    @media ${device.tablet} {
+      width: 5px !important;
+    }
+
+    @media ${device.tabletL} {
+      width: 8px !important;
     }
   }
 `
