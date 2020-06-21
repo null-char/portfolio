@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
   grid-template-rows: repeat(2, min-content);
   row-gap: 4rem;
   padding: 0rem 3rem;
+  margin-top: -7rem;
 
   @media ${device.tabletL} {
     padding: 0rem 5rem;
@@ -53,7 +54,7 @@ export const Card = styled(motion.div)`
   padding: 3rem 0rem;
   background-color: ${props => props.theme.colors.cardBackground};
   border-radius: 0.5rem;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 
   :hover {
     transform: translateY(-0.2rem);
