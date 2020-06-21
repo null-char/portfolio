@@ -12,6 +12,7 @@ import {
   Buttons,
   ButtonContainer,
 } from "@/components/Intro/styles"
+import scrollTo from "@/utils/scrollTo"
 
 type QueryData = {
   introYaml: {
@@ -63,7 +64,7 @@ const Intro: React.FC = () => {
           <Button primary>Contact Me</Button>
         </ButtonContainer>
 
-        <ButtonContainer>
+        <ButtonContainer onClick={() => scrollTo("projects", { delay: 150 })}>
           <Button>Projects</Button>
         </ButtonContainer>
       </Buttons>
