@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
   const { ref, controls, variants } = useScrollAnimation("slide")
 
   return (
-    <Wrapper ref={ref} animate={controls} variants={variants}>
+    <Wrapper ref={ref} animate={controls} variants={variants} id="projects">
       <Subheading>My Projects</Subheading>
 
       <ProjectsGrid>
@@ -98,7 +98,6 @@ const Projects: React.FC = () => {
                 </ProjectHeading>
 
                 <motion.div animate={controls} variants={variants}>
-                  {/* to allow for basic formatting */}
                   <ProjectDesc
                     dangerouslySetInnerHTML={{ __html: project.description }}
                   />
