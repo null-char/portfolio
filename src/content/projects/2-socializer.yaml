@@ -1,5 +1,5 @@
 name: "Socializer"
-description: "Socializer, as the name suggests, is a social media app built with <a target='_blank', href='https://firebase.google.com/'>Firebase</a> and <a target='_blank' href='https://reactjs.org'>React</a>. It was designed with a mobile first approach. Users (also called as socializers), share what's going on in their lives through text centric posts. The text content itself can exceed 1000+ characters. Other socializers can comment on them and these comments in turn can be replied to as well.
+description: "Socializer, as the name suggests, is a social media app built with <a target='_blank', href='https://firebase.google.com/' rel='noopener'>Firebase</a> and <a target='_blank' href='https://reactjs.org' rel='noopener'>React</a>. It was designed with a mobile first approach. Users (also called as socializers), share what's going on in their lives through text centric posts. The text content itself can exceed 1000+ characters. Other socializers can comment on them and these comments in turn can be replied to as well.
 <br /> <br />
 Functionality that you would expect from most social media apps is included."
 img: ../../assets/socializer.png
