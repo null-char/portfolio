@@ -4,6 +4,8 @@ const RIPPLE_ANIM_DUR = 600 // in milliseconds
 
 export type VariantProps = {
   primary?: boolean
+  secondary?: boolean
+  tertiary?: boolean
 }
 
 const ripple = keyframes`
@@ -53,12 +55,9 @@ const styles = css<VariantProps>`
   }
 
   ${Ink} {
-    background-color: ${props => props.primary && "rgba(255, 255, 255, 0.5)"}
+    background-color: ${props =>
+      (props.primary || props.tertiary) && "rgba(255, 255, 255, 0.5)"};
   }
-
-  /* :focus {
-    border: 0.2rem dashed ${props => props.theme.colors.primary};
-  } */
 
   ${props =>
     props.primary &&
@@ -71,13 +70,26 @@ const styles = css<VariantProps>`
       }
 
       :active {
-        box-shadow: 0rem 0.35rem 0.6rem ${props =>
-          props.theme.colors.primary}26;
+        box-shadow: 0rem 0.35rem 0.6rem ${props => props.theme.colors.primary}26;
+      }
+    `}
+
+  ${props =>
+    props.tertiary &&
+    css`
+      color: ${props => props.theme.colors.text};
+      background-color: ${props => props.theme.colors.background};
+      box-shadow: 0rem 0.3rem 0.6rem ${props => props.theme.colors.background}26;
+
+      :hover {
+        box-shadow: 0rem 0.5rem 0.6rem
+          ${props => props.theme.colors.background}26;
       }
 
-      /* :focus {
-        border: 0.2rem dashed ${props => props.theme.colors.text};
-      } */
+      :active {
+        box-shadow: 0rem 0.35rem 0.6rem
+          ${props => props.theme.colors.background}26;
+      }
     `}
 `
 
