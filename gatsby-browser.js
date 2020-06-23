@@ -1,6 +1,8 @@
-require("typeface-montserrat")
-require("typeface-fira-sans")
-const { default: Scrollbar, ScrollbarPlugin } = require("smooth-scrollbar")
+import "typeface-montserrat"
+import "typeface-fira-sans"
+import Scrollbar, {
+  ScrollbarPlugin
+} from "smooth-scrollbar"
 
 class DisableScrollPlugin extends ScrollbarPlugin {
   static pluginName = "disableScroll"
@@ -14,7 +16,9 @@ class DisableScrollPlugin extends ScrollbarPlugin {
       delta[this.options.direction] = 0
     }
 
-    return { ...delta }
+    return {
+      ...delta
+    }
   }
 }
 Scrollbar.use(DisableScrollPlugin)
