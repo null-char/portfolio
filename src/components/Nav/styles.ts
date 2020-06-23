@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import device from "@/utils/media"
 import { motion } from "framer-motion"
 
@@ -52,6 +52,12 @@ export const DesktopNavItemsList = styled.ul`
   }
 `
 
+const listItemFocusStyles = css`
+  :focus {
+    border: 0.1rem solid ${props => props.theme.colors.text};
+  }
+`
+
 export const NavItem = styled.li`
   text-transform: uppercase;
   display: block;
@@ -59,6 +65,8 @@ export const NavItem = styled.li`
   cursor: pointer;
   transition: 0.2s ease-out;
   transition-property: transform, color;
+
+  ${listItemFocusStyles}
 
   :hover {
     transform: translateX(-0.6rem) scale(1.1);
@@ -74,7 +82,7 @@ export const NavItem = styled.li`
   }
 `
 
-export const ContactBtn = styled.div`
+export const ContactBtn = styled.li`
   button {
     border: 0.2rem solid ${props => props.theme.colors.primary};
     background-color: transparent;
