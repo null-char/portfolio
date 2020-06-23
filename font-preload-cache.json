@@ -1,1 +1,11 @@
-{"timestamp":1592899469088,"hash":"16989cee614a1170a234477346bf6dcb","assets":{"/":{"/static/fira-sans-latin-700-2ecb426f85ffc1c53b677556210e629f.woff2":true}}}
+{
+  "timestamp": 1592900461458,
+  "hash": "16989cee614a1170a234477346bf6dcb",
+  "assets": {
+    "/": {
+      "/static/fira-sans-latin-700-2ecb426f85ffc1c53b677556210e629f.woff2": true,
+      "/static/montserrat-latin-400-bc3aa95dca08f5fee5291e34959c27bc.woff2": true,
+      "/static/montserrat-latin-700-39d93cf678c740f9f6b2b1cfde34bee3.woff2": true
+    }
+  }
+}
