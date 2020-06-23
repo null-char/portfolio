@@ -8,6 +8,7 @@ declare module "styled-components" {
       background: string
       rgbBackground: string
       text: string
+      darkText: string
       cardBackground: string
     }
   }

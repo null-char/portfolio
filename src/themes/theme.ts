@@ -7,6 +7,7 @@ const theme: DefaultTheme = {
     background: "#00080A",
     rgbBackground: "0, 8, 10",
     text: "#F3F3F3",
+    darkText: "#EEE",
     cardBackground: "#091619",
   },
 }
