@@ -79,19 +79,6 @@ export const ColoredText = styled.h3`
   text-transform: none;
 `
 
-export const CenteredHeading = styled(motion.h2)`
-  font-size: 2.7rem;
-  font-weight: 700;
-  font-family: Fira Sans, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  color: ${props => props.theme.colors.text};
-
-  @media ${device.tablet} {
-    font-size: 3.7rem;
-  }
-`
-
 export const CardText = styled(motion.p)`
   line-height: 1.45;
   color: ${props => props.theme.colors.text};

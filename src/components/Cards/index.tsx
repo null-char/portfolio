@@ -1,9 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { motion } from "framer-motion"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import Subheading from "@/components/Subheading"
 import {
   Wrapper,
-  CenteredHeading,
   CardsGrid,
   Card,
   CardMain,
@@ -74,9 +75,9 @@ const Cards: React.FC = () => {
 
   return (
     <Wrapper>
-      <CenteredHeading ref={hRef} animate={hControls} variants={hVariants}>
-        My Approach
-      </CenteredHeading>
+      <motion.div ref={hRef} animate={hControls} variants={hVariants}>
+        <Subheading center>My Approach</Subheading>
+      </motion.div>
 
       <CardsGrid ref={cRef} animate={cControls} variants={cVariants}>
         {cards.map(({ node: card }) => (
