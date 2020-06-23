@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -46,8 +47,7 @@ module.exports = {
         background_color: `#00080A`,
         theme_color: `#0EDEFF`,
         display: `standalone`,
-        icons: [
-          {
+        icons: [{
             src: "icons/icon-72x72.png",
             sizes: "72x72",
             type: "image/png",
