@@ -49,6 +49,7 @@ const Button: React.FC<ButtonProps> = ({ linkTo, ...props }) => {
       {...props}
       onClick={onButtonTap}
       target="_blank"
+      rel="noopener"
       href={linkTo}
     >
       {innerJSX}
