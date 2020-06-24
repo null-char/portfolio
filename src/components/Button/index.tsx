@@ -6,7 +6,18 @@ import {
   VariantProps,
 } from "@/components/Button/styles"
 
-type ButtonProps = VariantProps & { linkTo?: string }
+type ButtonProps = VariantProps & { linkTo?: string } & (
+    | (IntrinsicAttributes &
+        React.DetailedHTMLProps<
+          React.ButtonHTMLAttributes<HTMLButtonElement>,
+          HTMLButtonElement
+        >)
+    | (IntrinsicAttributes &
+        React.DetailedHTMLProps<
+          React.AnchorHTMLAttributes<HTMLAnchorElement>,
+          HTMLAnchorElement
+        >)
+  )
 
 /**
  * A Button component with a tap effect akin to Material design buttons.

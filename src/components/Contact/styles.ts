@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled, { keyframes, css } from "styled-components"
 import { motion } from "framer-motion"
 import device from "@/utils/media"
 
@@ -79,13 +79,13 @@ type InputProps = {
 }
 
 const labelStyles = css`
-  top: -2.5rem;
+  top: -2rem;
   opacity: 1;
   font-size: 1.3rem;
-
+/* 
   @media ${device.tablet} {
     top: -2rem;
-  }
+  } */
 `
 
 export const StyledInput = styled.input<InputProps>`
@@ -130,10 +130,6 @@ export const TextAreaContainer = styled(motion.div)`
   textarea:valid + label {
     ${labelStyles}
   }
-
-  @media ${device.tablet} {
-    grid-area: 2 / 1 / 3 / 3;
-  }
 `
 
 export const MessageTextArea = styled.textarea`
@@ -144,6 +140,23 @@ export const MessageTextArea = styled.textarea`
   width: 100%;
   height: 20rem;
   border-radius: 1rem;
+`
+
+export const BottomContainer = styled.div`
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  row-gap: 1rem;
+  justify-items: center;
+  position: relative;
+
+  p {
+    position: absolute;
+    bottom: -1rem;
+  }
+
+  @media ${device.tablet} {
+    grid-area: 2 / 1 / 3 / 3;
+  }
 `
 
 export const SubmitBtn = styled(motion.div)`
@@ -168,4 +181,25 @@ export const SubmitBtn = styled(motion.div)`
     grid-area: 3 / 1 / 4 / 4;
     justify-self: flex-start;
   }
+`
+
+const loadingAnim = keyframes`
+  0% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0.7
+  }
+
+  100% {
+    opacity: 1
+  }
+`
+
+// for animation purposes when sending message
+type BtnTextProps = { isSending: boolean }
+export const BtnText = styled.span<BtnTextProps>`
+  animation: ${loadingAnim} 1s infinite;
+  animation-play-state: ${props => (props.isSending ? "running" : "paused")};
 `

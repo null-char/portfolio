@@ -2,7 +2,7 @@
   "name": "null-char-portfolio",
   "private": true,
   "description": "A portfolio site built with Gatsby",
-  "version": "0.7.0",
+  "version": "0.9.0",
   "author": "Sooryakiran Ponnath <skp.frl@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",

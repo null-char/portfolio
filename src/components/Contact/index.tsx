@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { motion } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
 import Subheading from "@/components/Subheading"
 import Paragraph from "@/components/Paragraph"
@@ -13,16 +14,25 @@ import {
   TextAreaContainer,
   MessageTextArea,
   TextContent,
+  BottomContainer,
   SubmitBtn,
+  BtnText,
 } from "@/components/Contact/styles"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import theme from "@/themes/theme"
 
 type QueryData = {
   contactYaml: {
     heading: string
     text: string
+    email: string
   }
 }
+
+const API_URL =
+  process.env.NODE_ENV === "production"
+    ? process.env.GATSBY_API_URL
+    : "http://localhost:3000"
 
 const Contact: React.FC = () => {
   const data: QueryData = useStaticQuery(graphql`
@@ -30,6 +40,7 @@ const Contact: React.FC = () => {
       contactYaml {
         heading
         text
+        email
       }
     }
   `)
@@ -39,6 +50,9 @@ const Contact: React.FC = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const [isSending, setIsSending] = useState(false)
+  const [hasError, setHasError] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState("")
 
   // for convenience sake and to prevent logic duplication
   const changeFunctions: {
@@ -60,15 +74,58 @@ const Contact: React.FC = () => {
     changeFunctions[inputName](newValue)
   }
 
+  const onFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    // reset to default values
+    setHasError(false)
+    setSubmitMessage("")
+
+    setIsSending(true)
+    const data = {
+      name,
+      email,
+      message,
+    }
+
+    try {
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+      const responseData = await response.json()
+
+      if (response.status !== 200) {
+        setHasError(true)
+      }
+
+      setSubmitMessage(responseData.message)
+    } catch (err) {
+      setHasError(true)
+      setSubmitMessage("Something went wrong. Please try again later.")
+    }
+
+    setIsSending(false)
+  }
+
   return (
     <Wrapper>
       <InnerWrapper ref={ref} animate={controls} variants={variants}>
         <TextContent animate={controls} variants={variants}>
           <Subheading center>{contact.heading}</Subheading>
-          <Paragraph>{contact.text}</Paragraph>
+          <Paragraph>
+            {contact.text}: {contact.email}
+          </Paragraph>
         </TextContent>
 
-        <ContactForm animate={controls} variants={variants}>
+        <ContactForm
+          animate={controls}
+          variants={variants}
+          onSubmit={onFormSubmit}
+        >
           <InputContainer animate={controls} variants={variants}>
             <StyledInput
               id="name"
@@ -95,19 +152,39 @@ const Contact: React.FC = () => {
             <StyledLabel htmlFor="email">Your email</StyledLabel>
           </InputContainer>
 
-          <TextAreaContainer animate={controls} variants={variants}>
-            <MessageTextArea
-              id="message"
-              name="message"
-              value={message}
-              onChange={onInputChange}
-              required
-            />
-            <StyledLabel htmlFor="message">Tell me your story</StyledLabel>
-          </TextAreaContainer>
+          <BottomContainer>
+            <TextAreaContainer animate={controls} variants={variants}>
+              <MessageTextArea
+                id="message"
+                name="message"
+                value={message}
+                onChange={onInputChange}
+                required
+              />
+              <StyledLabel htmlFor="message">Tell me your story</StyledLabel>
+            </TextAreaContainer>
+
+            <motion.p
+              initial={{
+                translateY: "-1rem",
+                opacity: 0,
+              }}
+              animate={{
+                translateY: submitMessage ? "0rem" : "-2rem",
+                opacity: submitMessage ? 1 : 0,
+                color: hasError ? "#F00" : theme.colors.text,
+              }}
+            >
+              {submitMessage}
+            </motion.p>
+          </BottomContainer>
 
           <SubmitBtn animate={controls} variants={variants}>
-            <Button tertiary>Send</Button>
+            <Button tertiary disabled={isSending}>
+              <BtnText isSending={isSending}>
+                {isSending ? "Sending..." : "Send"}
+              </BtnText>
+            </Button>
           </SubmitBtn>
         </ContactForm>
       </InnerWrapper>

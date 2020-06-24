@@ -91,6 +91,12 @@ const styles = css<VariantProps>`
           ${props => props.theme.colors.background}26;
       }
     `}
+
+  :disabled {
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+  }
 `
 
 // default is secondary state
