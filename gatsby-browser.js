@@ -1,8 +1,6 @@
 import "typeface-montserrat"
 import "typeface-fira-sans"
-import Scrollbar, {
-  ScrollbarPlugin
-} from "smooth-scrollbar"
+import Scrollbar, { ScrollbarPlugin } from "smooth-scrollbar"
 
 class DisableScrollPlugin extends ScrollbarPlugin {
   static pluginName = "disableScroll"
@@ -17,7 +15,7 @@ class DisableScrollPlugin extends ScrollbarPlugin {
     }
 
     return {
-      ...delta
+      ...delta,
     }
   }
 }
