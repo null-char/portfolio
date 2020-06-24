@@ -176,8 +176,9 @@ const Contact: React.FC = () => {
               animate={{
                 translateY: submitMessage ? "0rem" : "-2rem",
                 opacity: submitMessage ? 1 : 0,
-                color: hasError ? "#F00" : theme.colors.darkText,
+                color: hasError ? "#F00" : theme.colors.background,
               }}
+              style={{ fontSize: "1.2rem" }}
             >
               {submitMessage}
             </motion.p>
