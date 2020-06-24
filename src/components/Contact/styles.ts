@@ -200,6 +200,9 @@ const loadingAnim = keyframes`
 // for animation purposes when sending message
 type BtnTextProps = { isSending: boolean }
 export const BtnText = styled.span<BtnTextProps>`
-  animation: ${loadingAnim} 1s infinite;
-  animation-play-state: ${props => (props.isSending ? "running" : "paused")};
+  ${props =>
+    props.isSending &&
+    css`
+      animation: ${loadingAnim} 1s infinite;
+    `}
 `
