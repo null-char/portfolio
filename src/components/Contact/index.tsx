@@ -53,6 +53,10 @@ const Contact: React.FC = () => {
   const [isSending, setIsSending] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [submitMessage, setSubmitMessage] = useState("")
+  const messages = {
+    success: "Successfully sent message.",
+    error: "Something went wrong. Please try again later.",
+  }
 
   // for convenience sake and to prevent logic duplication
   const changeFunctions: {
@@ -96,16 +100,16 @@ const Contact: React.FC = () => {
         },
         body: JSON.stringify(data),
       })
-      const responseData = await response.json()
 
       if (response.status !== 200) {
         setHasError(true)
+        setSubmitMessage(messages.error)
+      } else {
+        setSubmitMessage(messages.success)
       }
-
-      setSubmitMessage(responseData.message)
     } catch (err) {
       setHasError(true)
-      setSubmitMessage("Something went wrong. Please try again later.")
+      setSubmitMessage(messages.error)
     }
 
     setIsSending(false)
@@ -172,7 +176,7 @@ const Contact: React.FC = () => {
               animate={{
                 translateY: submitMessage ? "0rem" : "-2rem",
                 opacity: submitMessage ? 1 : 0,
-                color: hasError ? "#F00" : theme.colors.text,
+                color: hasError ? "#F00" : theme.colors.darkText,
               }}
             >
               {submitMessage}
