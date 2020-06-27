@@ -13,6 +13,28 @@ const GlobalStyles = createGlobalStyle`
     -webkit-tap-highlight-color: transparent;
   }
 
+  ::selection {
+    background-color: ${props => props.theme.colors.primary}
+  }
+
+  p {
+    a {
+      position: relative;
+      text-decoration: none;
+      color: ${props => props.theme.colors.primary};
+      cursor: pointer;
+      transition: opacity 0.2s ease-in-out;
+
+      :hover {
+        opacity: 0.9;
+      }
+
+      ::selection {
+        color: ${props => props.theme.colors.background};
+      }
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: Fira Sans, sans-serif;
     font-weight: 700;
