@@ -1,7 +1,7 @@
 import Scrollbar from "smooth-scrollbar"
 import { SMOOTH_SCROLL_ID } from "@/utils/constants"
 
-type Options = {
+export type ScrollOptions = {
   offset?: number
   delay?: number
 }
@@ -14,7 +14,7 @@ type Options = {
  *
  * ! Intended for vertical scrolls ONLY
  */
-const scrollTo = (elementId: string, options?: Options) => {
+const scrollTo = (elementId: string, options?: ScrollOptions) => {
   const configuredOptions = {
     offset: -100,
     delay: 0,
@@ -27,7 +27,7 @@ const scrollTo = (elementId: string, options?: Options) => {
   )
   const element = document.getElementById(elementId)
   const yPosition = element.offsetTop + offset
-  const duration = yPosition / 2.5
+  const duration = yPosition / 2.7
 
   // only scroll if the desired y position is actually different from the current scroll offset
   if (scrollbarInstance.offset.y !== yPosition) {
