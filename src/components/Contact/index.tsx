@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper id="contact">
       <InnerWrapper ref={ref} animate={controls} variants={variants}>
         <TextContent animate={controls} variants={variants}>
           <Subheading center>{contact.heading}</Subheading>
