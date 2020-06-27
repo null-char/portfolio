@@ -6,13 +6,18 @@ import { upAndDownAnim } from "@/components/StyledImage"
 
 export const Wrapper = styled(motion.section)`
   display: grid;
-  grid-template-rows: repeat(2, min-content);
+  grid-template-rows: repeat(3, min-content);
   row-gap: 4rem;
   padding: 0rem 2rem;
 
   /* align subheading to center */
   h2 {
     text-align: center;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 1.35;
   }
 
   @media ${device.tabletL} {
@@ -88,18 +93,6 @@ export const ProjectHeading = styled(motion.h3)`
 export const ProjectDesc = styled(Paragraph)`
   position: relative;
   z-index: -1;
-
-  a {
-    position: relative;
-    text-decoration: none;
-    color: ${props => props.theme.colors.primary};
-    cursor: pointer;
-    transition: opacity 0.2s ease-in-out;
-
-    :hover {
-      opacity: 0.9;
-    }
-  }
 `
 
 export const BtnsContainer = styled(motion.div)`
