@@ -17,6 +17,10 @@ export const Wrapper = styled(motion.nav)`
     padding: 0.8rem 4rem;
     grid-template-columns: 1fr 1fr;
   }
+
+  ul {
+    list-style: none;
+  }
 `
 
 // div containing the logo and the name
