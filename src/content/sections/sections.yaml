@@ -1,5 +1,5 @@
 - heading: "What I can do for you"
-  content: "Software development in general has always been of interest to me. Nowadays, I tend to primarily deal with web development. I have experience working with full stack apps as you will see from my projects below but if all you need is a decent digital presence, I'm open to that as well."
+  content: "Software development in general has always been of interest to me. Nowadays, I tend to primarily deal with web development. I have experience working with full stack apps as you will see from my projects below but if all you need is a digital presence, I'm open to that as well."
   img: ../../assets/business_deal.svg
 - heading: "My tools"
   content: "This is more so a technical overview of how I do things. I primarily use React for the front-end and I've previously dabbled in VueJS as well. As for the backend, I use NodeJS for the server and Postgres or MongoDB for databases. Of course, if you have differing requirements, I'm open to look into it and get back to you. I'm happy to adapt."

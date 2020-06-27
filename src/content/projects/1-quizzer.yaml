@@ -1,5 +1,5 @@
 name: "Quizzer"
-description: "This is a desktop app made with <a target='_blank' href='https://electronjs.org' rel='noopener'>Electron</a>. It offers tooling to create completely custom made quizzes. The editor allows you to add custom made questions or fetch questions from an API. You can sort them, put timers on them, categorize them by difficulty, etc."
+description: "This is a desktop app made with <a target='_blank' href='https://electronjs.org' rel='noopener'>Electron</a>. I always felt as if there was a lack of simple tooling for making well made quizzes. With Quizzer, I wanted to empower the creator to do more. To do this, I crafted a simple to use UI allowing you to rearrange, edit and create questions. You can also fetch questions from an API if you need some inspiration. You can also sort them, put timers on them, categorize them by difficulty, play local multiplayer and more."
 img: ../../assets/quizzer.png
 siteAvailable: false
 siteURL: ""

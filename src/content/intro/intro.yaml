@@ -4,7 +4,6 @@
 heading:
   main: "I'm a freelance web developer"
   sub: "Hey, there!"
-content: "Heya! I'm a fullstack developer and I love what I do. I also happen to love building things in general. If you have something you wish to be made or helped with, feel free to shoot me a message! "
+content: "Heya! I'm a fullstack developer and I love what I do. I believe in making products that are cost effective while satisfactorily solving your business problems. If you have something you wish to be made or helped with, feel free to shoot me a message! "
 primaryBtnText: "Contact Me"
 secondaryBtnText: "Projects"
-img: ../../assets/developer_activity.svg

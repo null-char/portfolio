@@ -2,7 +2,7 @@
   description: "A large majority of internet users are now on mobile. It makes way more sense to lean towards a mobile first approach when it comes to coding your UI — you simplify your design and making things desktop responsive ultimately becomes more intuitive."
   svg: ../../assets/mobile.svg
 - feat: "Simplicity."
-  description: "Sometimes simple is better. That hot new trendy technology will most probably not always replace the older technology. I tend to opt for the solutions that make sense given the business problem. For me, it's about making the right trade-offs."
+  description: "Sometimes simple is better. I believe in making products as lean as possible without sacrificing quality. If you can't explain why your system is crafted the way it is, then you have over-engineered. For me, it's about making the right trade-offs given the business problem."
   svg: ../../assets/code.svg
 - feat: "Client-first."
   description: "It is imperative to me that I offer a service that ultimately makes your life better than before. As such I will weigh in my own opinions in the places I have expertise in but ultimately prioritize your needs before anything else."
