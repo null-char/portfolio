@@ -1,5 +1,4 @@
 import React from "react"
-import { motion } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
 import Heading from "@/components/Heading"
 import Paragraph from "@/components/Paragraph"
@@ -14,6 +13,8 @@ import {
 } from "@/components/Intro/styles"
 import scrollTo from "@/utils/scrollTo"
 
+const SCROLL_DELAY = 150
+
 type QueryData = {
   introYaml: {
     heading: {
@@ -23,9 +24,6 @@ type QueryData = {
     content: string
     primaryBtnText: string
     secondaryBtnText: string
-    img: {
-      publicURL: string
-    }
   }
 }
 
@@ -40,9 +38,6 @@ const Intro: React.FC = () => {
         content
         primaryBtnText
         secondaryBtnText
-        img {
-          publicURL
-        }
       }
     }
   `)
@@ -60,11 +55,17 @@ const Intro: React.FC = () => {
       </TextContent>
 
       <Buttons animate={controls} variants={variants}>
-        <ButtonContainer>
+        <ButtonContainer
+          onClick={() =>
+            scrollTo("contact", { offset: -70, delay: SCROLL_DELAY })
+          }
+        >
           <Button primary>Contact Me</Button>
         </ButtonContainer>
 
-        <ButtonContainer onClick={() => scrollTo("projects", { delay: 150 })}>
+        <ButtonContainer
+          onClick={() => scrollTo("projects", { delay: SCROLL_DELAY })}
+        >
           <Button>Projects</Button>
         </ButtonContainer>
       </Buttons>
