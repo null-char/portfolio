@@ -66,6 +66,12 @@ const Projects: React.FC = () => {
     allProjectsYaml: { edges: projects },
   } = data
   const { ref, controls, variants } = useScrollAnimation("slide")
+  // for the paragraph at the very bottom
+  const {
+    ref: pRef,
+    controls: pControls,
+    variants: pVariants,
+  } = useScrollAnimation("slide")
 
   return (
     <Wrapper ref={ref} animate={controls} variants={variants} id="projects">
@@ -74,9 +80,6 @@ const Projects: React.FC = () => {
       <ProjectsGrid>
         {projects.map(({ node: project }, idx) => {
           const shouldSlideRight = (idx + 1) % 2 !== 0
-
-          // kind of a hacky fix but because of the order of elements, stagger children
-          // will have to be set to 0 for right slides.
           const { ref, controls, variants } = useScrollAnimation(
             shouldSlideRight ? "slideRight" : "slide"
           )
@@ -119,6 +122,18 @@ const Projects: React.FC = () => {
           )
         })}
       </ProjectsGrid>
+
+      <motion.p ref={pRef} animate={pControls} variants={pVariants}>
+        Want to see more? Check out my{" "}
+        <a
+          href="https://github.com/null-char/repositories"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub profile
+        </a>
+        .
+      </motion.p>
     </Wrapper>
   )
 }
