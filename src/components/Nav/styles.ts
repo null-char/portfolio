@@ -49,7 +49,7 @@ export const DesktopNavItemsList = styled.ul`
   @media ${device.tablet} {
     display: grid;
     list-style: none;
-    grid-template-columns: repeat(3, min-content);
+    grid-template-columns: repeat(2, min-content);
     justify-content: flex-end;
     align-items: center;
     column-gap: 3rem;
@@ -124,7 +124,7 @@ export const MobileNavItemsList = styled(motion.ul)`
   left: 0;
   background-color: ${props => props.theme.colors.background};
   display: grid;
-  grid-template-rows: repeat(3, min-content);
+  grid-template-rows: repeat(2, min-content);
   row-gap: 3rem;
   padding-top: 3.2rem;
   padding-bottom: 4rem;

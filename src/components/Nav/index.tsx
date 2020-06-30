@@ -57,7 +57,6 @@ const Nav: React.FC = () => {
 
   const navItemsJSX = (
     <>
-      <NavItem>Social</NavItem>
       <NavItem onClick={() => navScrollTo("projects")}>Projects</NavItem>
       <ContactBtn onClick={() => navScrollTo("contact", { offset: -70 })}>
         <Button primary>Contact</Button>
