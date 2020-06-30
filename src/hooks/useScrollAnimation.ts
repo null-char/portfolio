@@ -17,6 +17,12 @@ type Options = {
   inViewCallback?: () => void
 }
 type VariantStates = "visible" | "hidden"
+type AnimationProps = {
+  ref: (node?: Element) => void
+  controls: AnimationControls
+  variants: Variants
+  inView: boolean
+}
 
 /**
  * A hook which handles animation logic for scroll animations. Uses framer motion's `useAnimation` hook internally. Uses a "spring" animation for non-fade types.
@@ -30,10 +36,10 @@ type VariantStates = "visible" | "hidden"
  * Provide ref to the motion component to be scroll animated. Provide controls and variants to the parent and optionally its children (also must be motion components) if you wish to do stagger animations. The `staggerChildren` transiton property is set to 0.1 seconds by default.
  *
  */
-export const useScrollAnimation = (
+export function useScrollAnimation(
   type?: AnimationTypes,
   options?: Options
-) => {
+): AnimationProps {
   const animation = type || "fade"
   const intersectionOptions = options?.intersection || {}
   const animationOptions = options?.animation || {}
