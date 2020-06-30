@@ -8,6 +8,7 @@ import Sections from "@/components/Sections"
 import Cards from "@/components/Cards"
 import Projects from "@/components/Projects"
 import Contact from "@/components/Contact"
+import Footer from "@/components/Footer"
 import styled from "styled-components"
 import { SMOOTH_SCROLL_ID } from "@/utils/constants"
 
@@ -16,8 +17,6 @@ const GridContainer = styled.main`
   grid-template-rows: auto;
   row-gap: 15rem;
   padding-top: 6.4rem;
-
-  /* padding-bottom: 20rem; temporary padding */
 `
 
 const Home: React.FC<PageProps> = () => (
@@ -36,6 +35,8 @@ const Home: React.FC<PageProps> = () => (
         <Projects />
         <Contact />
       </GridContainer>
+
+      <Footer />
     </div>
   </Layout>
 )
